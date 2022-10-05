@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<locale.h>
+#include <conio.h>
+#include <math.h>
+
+float F;
+
+int main()
+{
+	int x, y, z;
+	setlocale(LC_CTYPE, "ukr");
+	printf("\n Введiть числа: \n");
+	printf("\n \t введiть число x=");
+	scanf("%d", &x);
+	printf("\n \t введiть число y=");
+	scanf("%d", &y);
+	printf("\n \t введiть число z=");
+	scanf("%d", &z);
+
+	//F = (x + y) / (x*x + x * y + y * y) + sin (x) / (1 + y * y) + cos (y) / (1 + x * x);
+	F = (x + y) / (pow(x, 2) + x * y + pow(y, 2)) + x / (1 + pow(y, 2)) + y / (1 + pow(x, 2));
+
+	printf("\n РЕЗУЛЬТАТ: \n");
+	printf("\n    Заданi значення:");
+	printf("\n \t x = %d \t y = %d \t z = %d \n", x, y, z);
+	printf("\n    Отриманий результат: %4.3f", F);
+
+	int getch(); 
+	return 0;
+}
